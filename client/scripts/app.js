@@ -15,7 +15,9 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
-    
+
+    // console.log($('chats'));
+
     // RoomsView.$select.append(`<option value='volvo'>Volvo</option>`);
     // RoomsView.$select.append(`<option value='ford'>Ford</option>`);
     // console.log(RoomsView.$select[0].value);
@@ -26,11 +28,17 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
+      
+
       for (var key of data.results) {
         MessagesView.render(key);
         RoomsView.render(key);
       }
 
+      RoomsView.$select.prepend(`<option value='choose-a-room'>Choose A Room</option>`);
+      $('option:selected').val('choose-a-room')
+
+      
       // MessagesView.initialize(data.results);
         
       // }

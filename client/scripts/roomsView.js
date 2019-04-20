@@ -4,6 +4,11 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+    RoomsView.$select.change(function() {
+      $('.chat').show()
+      let fltrOption = $('option:selected').val();
+      $('.chat').not('#' + fltrOption + '').hide();
+    });
   },
 
   render: function(msgObj) {

@@ -17,7 +17,7 @@ var MessagesView = {
     }
 
     if (msgObj.username) {
-      placeHolder.username = _.escape(msgObj.username);
+      placeHolder.username = _.escape(msgObj.username.replace('%20',' '));
     } else {
       placeHolder.username = 'Anonymous';
     }
