@@ -6,7 +6,8 @@ var RoomsView = {
   initialize: function() {
   },
 
-  render: function() {
+  render: function(roomData) {
+    
   }
 
 };

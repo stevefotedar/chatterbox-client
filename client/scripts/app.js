@@ -14,16 +14,17 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    RoomsView.$select.append(`<option value='volve'>Volve</option>`);
+    console.log(RoomsView.$select[0].value)
 
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-
       for(var key of data.results){
-
         MessagesView.render(key);
+        RoomsView.render(key);
       }
       // MessagesView.initialize(data.results);
         
