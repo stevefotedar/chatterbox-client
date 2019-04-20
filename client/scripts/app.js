@@ -14,8 +14,12 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    RoomsView.$select.append(`<option value='volvo'>Volve</option>`);
-    console.log(RoomsView.$select[0].value);
+
+    
+    // RoomsView.$select.append(`<option value='volvo'>Volvo</option>`);
+    // RoomsView.$select.append(`<option value='ford'>Ford</option>`);
+    // console.log(RoomsView.$select[0].value);
+    // console.log($('option').val() || []);
 
   },
 
@@ -26,6 +30,7 @@ var App = {
         MessagesView.render(key);
         RoomsView.render(key);
       }
+
       // MessagesView.initialize(data.results);
         
       // }

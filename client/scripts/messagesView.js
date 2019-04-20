@@ -10,6 +10,12 @@ var MessagesView = {
     let html = '';
     let placeHolder = {};
 
+    if (msgObj.roomname) {
+      placeHolder.roomname = _.escape(msgObj.roomname.slice(0, 10));
+    } else {
+      placeHolder.roomname = 'undefined';
+    }
+
     if (msgObj.username) {
       placeHolder.username = _.escape(msgObj.username);
     } else {
